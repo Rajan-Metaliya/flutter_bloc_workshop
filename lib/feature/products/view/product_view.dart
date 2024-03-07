@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../utils/theme/ct_theme.dart';
 import '../bloc/product_bloc.dart';
 import '../dialog/add_to_cart_dialog.dart';
 import '../widgets/product_card.dart';
@@ -24,7 +23,7 @@ class ProductView extends StatelessWidget {
           );
         } else if (state is ProductLoadedState) {
           return Container(
-            color: CTheme.of(context).theme.background,
+            color: Theme.of(context).colorScheme.background,
             child: GridView.builder(
               itemCount: state.products.length,
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
