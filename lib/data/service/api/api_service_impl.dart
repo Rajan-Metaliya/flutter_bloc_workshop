@@ -33,14 +33,20 @@ class ApiServiceImpl extends ApiService {
     Map<String, dynamic>? query,
   }) async {
     try {
+      print('Path: $path Query: $query');
+
       final response = await _dio.get(path, queryParameters: query);
+
+      print('Response: $response');
 
       return ApiResponse.fromDioResponse(
         response,
       );
     } on DioException catch (e) {
+      print('DioException: $e');
       return ApiResponse.error(e.toString());
     } catch (e) {
+      print('Error: $e');
       return ApiResponse.error(e.toString());
     }
   }

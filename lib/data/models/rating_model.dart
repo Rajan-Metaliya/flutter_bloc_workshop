@@ -1,3 +1,5 @@
+import '../../utils/helper/helper_methods.dart';
+
 class RatingModel {
   final double rate;
   final int count;
@@ -6,8 +8,8 @@ class RatingModel {
 
   factory RatingModel.fromJson(Map<String, dynamic> json) {
     return RatingModel(
-      rate: json['rate'] as double,
-      count: json['count'] as int,
+      rate: toDouble(json['rate']),
+      count: toInt(json['count']),
     );
   }
 }
