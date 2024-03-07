@@ -4,15 +4,17 @@
   // foldeing all imports by default
   "editor.foldingImportsByDefault": true,
   // show line rulers
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   // TO sort imports on save
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll": true,
-    "source.quickFix": true,
-    "quickfix.add.required": true,
-    "quickfix.add.required.multi": true,
-    "quickfix.create.constructorForFinalFields": true
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "source.quickFix": "explicit",
+    "quickfix.add.required": "explicit",
+    "quickfix.add.required.multi": "explicit",
+    "quickfix.create.constructorForFinalFields": "explicit"
   },
   "dart.flutterSdkPath": ".fvm/flutter_sdk",
   "dart.showTodos": false,

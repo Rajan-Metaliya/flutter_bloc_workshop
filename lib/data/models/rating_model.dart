@@ -6,8 +6,8 @@ class RatingModel {
 
   factory RatingModel.fromJson(Map<String, dynamic> json) {
     return RatingModel(
-      rate: json['rate'].toDouble(),
-      count: json['count'].toInt(),
+      rate: json['rate'] as double,
+      count: json['count'] as int,
     );
   }
 }
