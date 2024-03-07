@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../feature/theme/bloc/bloc/theme_bloc.dart';
+import '../utils/theme/light_theme.dart';
 import 'route/routes/router.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,18 +10,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          primary: Colors.deepPurple,
-          seedColor: Colors.deepPurple,
-          background: Theme.of(context).colorScheme.background,
-          onSurface: Theme.of(context).colorScheme.onSurfaceVariant,
-        ),
-        useMaterial3: true,
+    return BlocProvider(
+      create: (context) => ThemeBloc(),
+      child: Builder(
+        builder: (context) {
+          return MaterialApp.router(
+            title: 'Flutter Demo',
+            theme: context.select((ThemeBloc bloc) => bloc.state.themeData),
+            darkTheme: AppTheme.darkTheme,
+            routerConfig: router,
+          );
+        },
       ),
-      routerConfig: router,
     );
   }
 }

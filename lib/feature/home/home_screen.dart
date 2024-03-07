@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/route/routes/route_path.dart';
+import '../theme/view/theme_button_view.dart';
 import 'bloc/categories_bloc.dart';
 import 'view/categories_view.dart';
 import 'widgets/categories_card.dart';
@@ -18,6 +19,9 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
           title: const Text('Home'),
+          actions: const [
+            ThemeButtonView(),
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),

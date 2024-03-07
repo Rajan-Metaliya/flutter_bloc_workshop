@@ -7,10 +7,14 @@ sealed class ThemeEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class ThemeChangeEvent extends ThemeEvent {
-  final ThemeType themeType;
+class ThemeInitEvent extends ThemeEvent {
+  const ThemeInitEvent();
+}
 
-  const ThemeChangeEvent(this.themeType);
+class ThemeChangeEvent extends ThemeEvent {
+  final ThemeData themeData;
+
+  const ThemeChangeEvent(this.themeData);
 
   @override
   List<Object> get props => [];
