@@ -8,10 +8,10 @@ class ProductCard extends StatelessWidget {
   final Function() addToCart;
 
   const ProductCard({
-    Key? key,
+    super.key,
     required this.product,
     required this.addToCart,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
