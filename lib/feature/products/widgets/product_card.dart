@@ -24,11 +24,14 @@ class ProductCard extends StatelessWidget {
               topLeft: Radius.circular(10),
               topRight: Radius.circular(10),
             ),
-            child: Image.network(
-              product.image,
-              height: 150,
-              width: double.infinity,
-              fit: BoxFit.fitWidth,
+            child: Container(
+              color: Theme.of(context).colorScheme.secondary,
+              child: Image.network(
+                product.image,
+                height: 150,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Padding(
@@ -38,7 +41,11 @@ class ProductCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Icon(Icons.star, color: Colors.yellow),
+                    Icon(
+                      Icons.star,
+                      color: Theme.of(context).colorScheme.primary,
+                      size: 20,
+                    ),
                     Text(product.rating.rate.toString()),
                   ],
                 ),
@@ -49,7 +56,7 @@ class ProductCard extends StatelessWidget {
           Expanded(
             child: Text(
               product.title,
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.bodyMedium,
               maxLines: 2,
               textAlign: TextAlign.center,
             ),
@@ -59,7 +66,7 @@ class ProductCard extends StatelessWidget {
             onPressed: addToCart,
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(
-                Colors.green.shade300,
+                Theme.of(context).colorScheme.primary,
               ),
             ),
             child: const Text(

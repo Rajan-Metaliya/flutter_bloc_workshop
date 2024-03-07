@@ -66,7 +66,7 @@ class AppTheme {
     errorContainer: Color(0xFF8C1D18),
     onErrorContainer: Color(0xFFF9DEDC),
     outline: Color(0xFF938F99),
-    background: Color(0xFF1C1B1F),
+    background: Color(0xFF121212),
     onBackground: Color(0xFFE6E1E5),
     surface: Color(0xFF1C1B1F),
     onSurface: Color(0xFFE6E1E5),

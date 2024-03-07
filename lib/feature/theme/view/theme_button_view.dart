@@ -36,11 +36,7 @@ class _ThemeButtonViewState extends State<ThemeButtonView> {
             );
           }
         }
-        return Container(
-          color: Colors.red,
-          height: 20,
-          width: 20,
-        );
+        return Container();
       },
     );
   }

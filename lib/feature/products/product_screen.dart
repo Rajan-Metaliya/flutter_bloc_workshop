@@ -18,6 +18,7 @@ class ProductScreen extends StatelessWidget {
       create: (context) =>
           ProductBloc()..add(ProductFetchEvent(category: category)),
       child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
           title: Text(
             category,

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ThemeBloc(),
+      create: (context) => ThemeBloc()..add(const ThemeInitEvent()),
       child: Builder(
         builder: (context) {
           return MaterialApp.router(
