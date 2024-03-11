@@ -16,7 +16,10 @@ class AppGradientTheme extends ThemeExtension<AppGradientTheme> {
   factory AppGradientTheme.generate({required ColorScheme colorScheme}) {
     return AppGradientTheme(
       buttonGradient: LinearGradient(
-        colors: [colorScheme.primary, colorScheme.secondary],
+        colors: [
+          colorScheme.primary,
+          colorScheme.secondary,
+        ],
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
       ),
@@ -26,8 +29,13 @@ class AppGradientTheme extends ThemeExtension<AppGradientTheme> {
         end: Alignment.centerRight,
       ),
       backgroundGradient: LinearGradient(
+        stops: const [0.1, 0.2, 0.9, 0.9, 0.95, 1],
         colors: [
           colorScheme.surfaceTint,
+          colorScheme.surfaceTint,
+          colorScheme.onInverseSurface,
+          colorScheme.onInverseSurface,
+          colorScheme.onInverseSurface,
           colorScheme.onInverseSurface,
         ],
         begin: Alignment.bottomLeft,

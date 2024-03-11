@@ -16,6 +16,7 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Theme.of(context).colorScheme.secondaryContainer,
+      elevation: 4,
       shadowColor: Theme.of(context).appShadowTheme.redShadow.color,
       child: InkWell(
         onTap: onTap,

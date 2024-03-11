@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
+            backgroundColor: Colors.transparent,
             title: const Text('Home'),
             actions: const [
               ThemeButtonView(),

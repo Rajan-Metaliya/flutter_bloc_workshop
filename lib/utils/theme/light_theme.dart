@@ -54,7 +54,7 @@ class AppTheme {
     surfaceVariant: Color(0xFFE7E0EC),
     onSurfaceVariant: Color(0xFF49454F),
     inverseSurface: Color(0xFF313033),
-    onInverseSurface: Color(0xFFF4EFF4),
+    onInverseSurface: Color(0xFFEADDFF),
     inversePrimary: Color(0xFFD0BCFF),
     shadow: Color(0xFFff0000),
     surfaceTint: Color(0xFF6750A4),

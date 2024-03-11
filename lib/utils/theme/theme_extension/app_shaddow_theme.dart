@@ -11,8 +11,8 @@ class AppShadowTheme extends ThemeExtension<AppShadowTheme> {
     this.redShadow = const BoxShadow(
       color: Color(0xFFFF0000),
       blurRadius: 10,
-      spreadRadius: 5,
-      offset: Offset(0, 10),
+      spreadRadius: 10,
+      offset: Offset(-10, 10),
       blurStyle: BlurStyle.outer,
     ),
     this.blueShadow = const BoxShadow(
