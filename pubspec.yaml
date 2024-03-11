@@ -21,6 +21,7 @@ dependencies:
   go_router: ^13.2.0
   talker_bloc_logger: ^4.0.3
   talker_dio_logger: ^4.0.3
+  adaptive_theme: ^3.6.0
 
 dev_dependencies:
   flutter_test:

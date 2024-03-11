@@ -11,10 +11,19 @@ class ThemeInitEvent extends ThemeEvent {
   const ThemeInitEvent();
 }
 
-class ThemeChangeEvent extends ThemeEvent {
+class ThemeChangeToDarkEvent extends ThemeEvent {
   final ThemeData themeData;
 
-  const ThemeChangeEvent(this.themeData);
+  const ThemeChangeToDarkEvent(this.themeData);
+
+  @override
+  List<Object> get props => [];
+}
+
+class ThemeChangeToLightEvent extends ThemeEvent {
+  final ThemeData themeData;
+
+  const ThemeChangeToLightEvent(this.themeData);
 
   @override
   List<Object> get props => [];

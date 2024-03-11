@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,18 +21,28 @@ class _ThemeButtonViewState extends State<ThemeButtonView> {
             return IconButton(
               icon: const Icon(Icons.brightness_3),
               onPressed: () {
-                context
-                    .read<ThemeBloc>()
-                    .add(ThemeChangeEvent(ThemeData.dark()));
+                AdaptiveTheme.of(context).setDark();
+                context.read<ThemeBloc>().add(
+                      ThemeChangeToDarkEvent(
+                        Theme.of(context).copyWith(
+                          brightness: Brightness.dark,
+                        ),
+                      ),
+                    );
               },
             );
           } else {
             return IconButton(
               icon: const Icon(Icons.brightness_4),
               onPressed: () {
-                context
-                    .read<ThemeBloc>()
-                    .add(ThemeChangeEvent(ThemeData.light()));
+                AdaptiveTheme.of(context).setLight();
+                context.read<ThemeBloc>().add(
+                      ThemeChangeToLightEvent(
+                        Theme.of(context).copyWith(
+                          brightness: Brightness.light,
+                        ),
+                      ),
+                    );
               },
             );
           }
