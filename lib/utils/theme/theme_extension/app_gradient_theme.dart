@@ -62,7 +62,11 @@ class AppGradientTheme extends ThemeExtension<AppGradientTheme> {
       return copyWith();
     }
     return AppGradientTheme.generate(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.blue,
+        onInverseSurface: const Color(0xFFF4EFF4),
+        surfaceTint: const Color(0xFF6750A4),
+      ),
     );
   }
 }
