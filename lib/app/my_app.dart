@@ -1,4 +1,3 @@
-import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,14 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ThemeBloc()..add(const ThemeInitEvent()),
-      child: AdaptiveTheme(
-        light: ThemeData.light(useMaterial3: true),
-        dark: ThemeData.dark(useMaterial3: true),
-        initial: AdaptiveThemeMode.dark,
-        builder: (theme, darkTheme) => MaterialApp.router(
+      child: Builder(
+        builder: (context) => MaterialApp.router(
           title: 'Flutter Demo',
-          theme: theme,
-          darkTheme: darkTheme,
+          theme: context.watch<ThemeBloc>().state.themeData,
+          darkTheme: ThemeData.dark(),
           routerConfig: router,
         ),
       ),
