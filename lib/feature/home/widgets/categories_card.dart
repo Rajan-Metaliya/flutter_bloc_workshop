@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/theme/theme_extension/theme_extension.dart';
+
 class CategoryCard extends StatelessWidget {
   final String categoryName;
   final Function()? onTap;
@@ -14,6 +16,7 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Theme.of(context).colorScheme.secondaryContainer,
+      shadowColor: Theme.of(context).appShadowTheme.redShadow.color,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(10.0),

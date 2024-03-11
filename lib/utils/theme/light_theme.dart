@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 
+import 'theme_extension/app_gradient_theme.dart';
+import 'theme_extension/app_shaddow_theme.dart';
+
 class AppTheme {
   static ThemeData get lightTheme => ThemeData.light(
         useMaterial3: true,
       ).copyWith(
         colorScheme: lightColorScheme,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        extensions: [
+          AppShadowTheme(),
+          AppGradientTheme.generate(colorScheme: lightColorScheme),
+        ],
       );
 
   static ThemeData get darkTheme => ThemeData.dark(
         useMaterial3: true,
       ).copyWith(
         colorScheme: darkColorScheme,
+        extensions: [
+          AppShadowTheme(),
+          AppGradientTheme.generate(colorScheme: darkColorScheme),
+        ],
       );
 
   static ColorScheme lightColorScheme = const ColorScheme(

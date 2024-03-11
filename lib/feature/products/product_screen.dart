@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../utils/theme/theme_extension/theme_extension.dart';
 import 'bloc/product_bloc.dart';
 import 'view/product_view.dart';
 
@@ -17,16 +18,20 @@ class ProductScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) =>
           ProductBloc()..add(ProductFetchEvent(category: category)),
-      child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
-        appBar: AppBar(
-          title: Text(
-            category,
-          ),
+      child: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: Theme.of(context).appGradientTheme.backgroundGradient,
         ),
-        body: const Padding(
-          padding: EdgeInsets.all(20.0),
-          child: ProductView(),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            title: Text(
+              category,
+            ),
+          ),
+          body: const ProductView(),
         ),
       ),
     );

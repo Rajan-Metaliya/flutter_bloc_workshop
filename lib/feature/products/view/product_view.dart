@@ -22,26 +22,29 @@ class ProductView extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         } else if (state is ProductLoadedState) {
-          return Container(
-            color: Theme.of(context).colorScheme.background,
-            child: GridView.builder(
-              itemCount: state.products.length,
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 240,
-                childAspectRatio: 0.6,
-              ),
-              itemBuilder: (context, index) {
-                final product = state.products[index];
-                return ProductCard(
-                  product: product,
-                  addToCart: () {
-                    context.read<ProductBloc>().add(
-                          ProductAddToCartEvent(product: product),
-                        );
-                  },
-                );
-              },
+          return GridView.builder(
+            itemCount: state.products.length,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 20,
             ),
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 240,
+              childAspectRatio: 0.55,
+              crossAxisSpacing: 30,
+              mainAxisSpacing: 30,
+            ),
+            itemBuilder: (context, index) {
+              final product = state.products[index];
+              return ProductCard(
+                product: product,
+                addToCart: () {
+                  context.read<ProductBloc>().add(
+                        ProductAddToCartEvent(product: product),
+                      );
+                },
+              );
+            },
           );
         } else if (state is ProductErrorState) {
           return const Center(
