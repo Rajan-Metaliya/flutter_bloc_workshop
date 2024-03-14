@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/route/routes/route_path.dart';
+import '../../data/repo/product/product_repo.dart';
 import '../../utils/theme/theme_extension/theme_extension.dart';
 import '../theme/view/theme_button_view.dart';
 import 'bloc/categories_bloc.dart';
@@ -15,7 +16,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CategoriesBloc>(
-      create: (_) => CategoriesBloc()..add(const CategoriesFetchEvent()),
+      create: (_) => CategoriesBloc(context.read<ProductRepo>())
+        ..add(const CategoriesFetchEvent()),
       child: Container(
         decoration: BoxDecoration(
           gradient: Theme.of(context).appGradientTheme.backgroundGradient,

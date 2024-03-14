@@ -2,20 +2,21 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../data/models/product_model.dart';
-import '../../../data/repo/repo.dart';
+import '../../../data/repo/product/product_repo.dart';
 
 part 'product_event.dart';
 part 'product_state.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
-  ProductBloc() : super(ProductInitialState()) {
+  final ProductRepo _productRepo;
+  ProductBloc(this._productRepo) : super(ProductInitialState()) {
     on<ProductFetchEvent>((event, emit) async {
       emit(ProductLoadingState());
 
       try {
         final category = event.category == "All" ? null : event.category;
 
-        final products = await productRepo.getProducts(category: category);
+        final products = await _productRepo.getProducts(category: category);
 
         emit(ProductLoadedState(products: products));
       } catch (e) {
