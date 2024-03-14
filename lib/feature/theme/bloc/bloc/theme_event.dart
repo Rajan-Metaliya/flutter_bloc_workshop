@@ -8,7 +8,8 @@ sealed class ThemeEvent extends Equatable {
 }
 
 class ThemeInitEvent extends ThemeEvent {
-  const ThemeInitEvent();
+  final Brightness brightness;
+  const ThemeInitEvent({this.brightness = Brightness.light});
 }
 
 class ThemeChangeToDarkEvent extends ThemeEvent {

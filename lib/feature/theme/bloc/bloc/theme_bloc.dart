@@ -13,9 +13,13 @@ part 'theme_state.dart';
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc() : super(ThemeInitialState()) {
     on<ThemeInitEvent>((event, emit) {
-      // Get color scheme from the light theme
+      final brightness = event.brightness;
 
-      emit(ThemeLoadedState(state.themeData));
+      final themeData = brightness == Brightness.light
+          ? AppTheme.lightTheme
+          : AppTheme.darkTheme;
+
+      emit(ThemeLoadedState(themeData));
     });
 
     on<ThemeChangeToDarkEvent>((event, emit) {
