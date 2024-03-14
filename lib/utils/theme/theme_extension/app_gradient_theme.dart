@@ -13,12 +13,12 @@ class AppGradientTheme extends ThemeExtension<AppGradientTheme> {
       backgroundGradient: LinearGradient(
         stops: const [0.1, 0.2, 0.9, 0.9, 0.95, 1],
         colors: [
-          colorScheme.surfaceTint,
-          colorScheme.surfaceTint,
-          colorScheme.onInverseSurface,
-          colorScheme.onInverseSurface,
-          colorScheme.onInverseSurface,
-          colorScheme.onInverseSurface,
+          colorScheme.onTertiary,
+          colorScheme.onTertiary,
+          colorScheme.onTertiary,
+          colorScheme.onTertiary,
+          colorScheme.tertiaryContainer,
+          colorScheme.tertiaryContainer,
         ],
         begin: Alignment.bottomLeft,
         end: Alignment.topRight,
@@ -45,8 +45,8 @@ class AppGradientTheme extends ThemeExtension<AppGradientTheme> {
     }
     return AppGradientTheme.generate(
       colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.purple,
-        surfaceTint: const Color(0xFF6750A4),
+        seedColor: const Color(0xFF63DDA0),
+        surfaceTint: const Color(0xFF63DDA0),
       ),
     );
   }

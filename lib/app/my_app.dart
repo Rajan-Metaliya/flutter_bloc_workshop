@@ -34,10 +34,6 @@ class _MyAppState extends State<MyApp> {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       routerConfig: router,
-      themeAnimationStyle: AnimationStyle(
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      ),
     );
   }
 }
