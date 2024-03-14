@@ -1,68 +1,34 @@
 import 'package:flutter/material.dart';
 
 class AppShadowTheme extends ThemeExtension<AppShadowTheme> {
-  final BoxShadow blueShadow;
-
-  final BoxShadow redShadow;
-
-  final BoxShadow greenShadow;
+  final BoxShadow primaryShadow;
 
   AppShadowTheme({
-    this.redShadow = const BoxShadow(
-      color: Color(0xFFFF0000),
+    this.primaryShadow = const BoxShadow(
+      color: Color(0xFF6750A4),
       blurRadius: 10,
       spreadRadius: 10,
       offset: Offset(-10, 10),
       blurStyle: BlurStyle.outer,
     ),
-    this.blueShadow = const BoxShadow(
-      color: Color(0xFF0000FF),
-      blurRadius: 7,
-      spreadRadius: 5,
-      offset: Offset(5, 10),
-      blurStyle: BlurStyle.outer,
-    ),
-    this.greenShadow = const BoxShadow(
-      color: Color(0xFF00FF00),
-      blurRadius: 12,
-      spreadRadius: 10,
-      offset: Offset(10, 10),
-      blurStyle: BlurStyle.solid,
-    ),
   });
 
   factory AppShadowTheme.dark() {
     return AppShadowTheme(
-      redShadow: const BoxShadow(
-        color: Color.fromARGB(255, 71, 7, 7),
+      primaryShadow: const BoxShadow(
+        color: Color(0xFF381E72),
         blurRadius: 10,
         spreadRadius: 5,
       ),
-      blueShadow: const BoxShadow(
-        color: Color.fromARGB(255, 3, 3, 56),
-        blurRadius: 10,
-        spreadRadius: 5,
-      ),
-      greenShadow: const BoxShadow(
-        color: Color.fromARGB(255, 6, 67, 6),
-        blurRadius: 10,
-        spreadRadius: 5,
-      ),
-    );
-  }
-
-  ThemeData extend(ThemeData theme) {
-    return theme.copyWith(
-      extensions: <AppShadowTheme>[this],
     );
   }
 
   @override
-  ThemeExtension<AppShadowTheme> copyWith() {
+  AppShadowTheme copyWith({
+    BoxShadow? primaryShadow,
+  }) {
     return AppShadowTheme(
-      redShadow: redShadow,
-      blueShadow: blueShadow,
-      greenShadow: greenShadow,
+      primaryShadow: primaryShadow ?? this.primaryShadow,
     );
   }
 

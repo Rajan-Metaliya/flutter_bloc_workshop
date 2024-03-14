@@ -1,33 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class AppGradientTheme extends ThemeExtension<AppGradientTheme> {
-  final Gradient buttonGradient;
-
-  final Gradient appBarGradient;
-
   final Gradient backgroundGradient;
 
   AppGradientTheme({
-    required this.buttonGradient,
-    required this.appBarGradient,
     required this.backgroundGradient,
   });
 
   factory AppGradientTheme.generate({required ColorScheme colorScheme}) {
     return AppGradientTheme(
-      buttonGradient: LinearGradient(
-        colors: [
-          colorScheme.primary,
-          colorScheme.secondary,
-        ],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
-      appBarGradient: LinearGradient(
-        colors: [colorScheme.background, colorScheme.primaryContainer],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
       backgroundGradient: LinearGradient(
         stops: const [0.1, 0.2, 0.9, 0.9, 0.95, 1],
         colors: [
@@ -45,11 +27,11 @@ class AppGradientTheme extends ThemeExtension<AppGradientTheme> {
   }
 
   @override
-  ThemeExtension<AppGradientTheme> copyWith() {
+  AppGradientTheme copyWith({
+    Gradient? backgroundGradient,
+  }) {
     return AppGradientTheme(
-      buttonGradient: buttonGradient,
-      appBarGradient: appBarGradient,
-      backgroundGradient: backgroundGradient,
+      backgroundGradient: backgroundGradient ?? this.backgroundGradient,
     );
   }
 
@@ -63,8 +45,7 @@ class AppGradientTheme extends ThemeExtension<AppGradientTheme> {
     }
     return AppGradientTheme.generate(
       colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.blue,
-        onInverseSurface: const Color(0xFFF4EFF4),
+        seedColor: Colors.purple,
         surfaceTint: const Color(0xFF6750A4),
       ),
     );

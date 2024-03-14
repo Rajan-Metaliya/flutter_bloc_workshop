@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'theme_extension/app_color_theme.dart';
 import 'theme_extension/app_gradient_theme.dart';
 import 'theme_extension/app_shaddow_theme.dart';
 
@@ -15,7 +14,6 @@ class AppTheme {
         ),
         extensions: [
           AppShadowTheme(),
-          AppColorTheme(),
           AppGradientTheme.generate(colorScheme: lightColorScheme),
         ],
       );
@@ -25,7 +23,7 @@ class AppTheme {
       ).copyWith(
         colorScheme: darkColorScheme,
         extensions: [
-          AppShadowTheme(),
+          AppShadowTheme.dark(),
           AppGradientTheme.generate(colorScheme: darkColorScheme),
         ],
       );
@@ -59,7 +57,7 @@ class AppTheme {
     onInverseSurface: Color(0xFFF4EFF4),
     inversePrimary: Color(0xFFD0BCFF),
     shadow: Color(0xFFff0000),
-    surfaceTint: Color(0xFF6750A4),
+    surfaceTint: Color(0xFF9180c1),
     outlineVariant: Color(0xFFCAC4D0),
     scrim: Color(0xFF000000),
   );

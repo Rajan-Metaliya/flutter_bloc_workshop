@@ -22,7 +22,7 @@ class ProductCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         backgroundBlendMode: BlendMode.darken,
         boxShadow: [
-          Theme.of(context).appShadowTheme.blueShadow,
+          Theme.of(context).appShadowTheme.primaryShadow,
         ],
       ),
       child: Padding(

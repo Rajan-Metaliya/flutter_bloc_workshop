@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/theme/light_theme.dart';
+import '../../../../utils/theme/app_theme.dart';
 
 part 'theme_event.dart';
 part 'theme_state.dart';
