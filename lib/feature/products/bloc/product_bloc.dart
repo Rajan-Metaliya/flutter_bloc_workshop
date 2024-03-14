@@ -9,6 +9,7 @@ part 'product_state.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
   final ProductRepo _productRepo;
+
   ProductBloc(this._productRepo) : super(ProductInitialState()) {
     on<ProductFetchEvent>((event, emit) async {
       emit(ProductLoadingState());

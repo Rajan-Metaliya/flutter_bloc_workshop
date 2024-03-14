@@ -7,12 +7,12 @@ import 'bloc/product_bloc.dart';
 import 'view/product_view.dart';
 
 class ProductScreen extends StatelessWidget {
+  final String category;
+
   const ProductScreen({
     super.key,
     required this.category,
   });
-
-  final String category;
 
   @override
   Widget build(BuildContext context) {

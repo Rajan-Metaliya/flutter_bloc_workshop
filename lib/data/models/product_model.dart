@@ -2,13 +2,13 @@ import '../../utils/helper/helper_methods.dart';
 import 'rating_model.dart';
 
 class ProductModel {
-  final int id;
+  final RatingModel rating;
+  final String category;
+  final String description;
+  final String image;
   final String title;
   final double price;
-  final String description;
-  final String category;
-  final String image;
-  final RatingModel rating;
+  final int id;
 
   ProductModel({
     required this.id,
