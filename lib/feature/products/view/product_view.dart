@@ -24,9 +24,15 @@ class ProductView extends StatelessWidget {
         } else if (state is ProductLoadedState) {
           return GridView.builder(
             itemCount: state.products.length,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 20,
+            ),
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 240,
-              childAspectRatio: 0.6,
+              childAspectRatio: 0.55,
+              crossAxisSpacing: 30,
+              mainAxisSpacing: 30,
             ),
             itemBuilder: (context, index) {
               final product = state.products[index];

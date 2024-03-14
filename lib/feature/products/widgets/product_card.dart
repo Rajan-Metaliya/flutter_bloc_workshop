@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/models/product_model.dart';
+import '../../../utils/theme/theme_extension/theme_extension.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductModel product;
@@ -15,60 +16,70 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.primaryContainer,
+        borderRadius: BorderRadius.circular(10),
+        backgroundBlendMode: BlendMode.darken,
+        boxShadow: [
+          Theme.of(context).appShadowTheme.primaryShadow,
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              color: Theme.of(context).colorScheme.secondary,
+              child: Image.network(
+                product.image,
+                height: 150,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
-            child: Image.network(
-              product.image,
-              height: 150,
-              width: double.infinity,
-              fit: BoxFit.fitWidth,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 20,
+                      ),
+                      Text(product.rating.rate.toString()),
+                    ],
+                  ),
+                  Text('\$${product.price.toStringAsFixed(2)}'),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.star, color: Colors.yellow),
-                    Text(product.rating.rate.toString()),
-                  ],
-                ),
-                Text('\$${product.price.toStringAsFixed(2)}'),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Text(
+            Text(
               product.title,
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.bodyMedium,
               maxLines: 2,
               textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(height: 8),
-          ElevatedButton(
-            onPressed: addToCart,
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                Colors.green.shade300,
+            const Spacer(),
+            MaterialButton(
+              onPressed: () {},
+              elevation: 5,
+              color: Theme.of(context).colorScheme.primary,
+              materialTapTargetSize: MaterialTapTargetSize.padded,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                'Add to cart',
+                style: TextStyle(color: Colors.white),
               ),
             ),
-            child: const Text(
-              'Add to cart',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          const SizedBox(height: 8),
-        ],
+          ],
+        ),
       ),
     );
   }
