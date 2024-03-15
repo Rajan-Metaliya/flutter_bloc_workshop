@@ -19,14 +19,21 @@ class HomeScreen extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            stops: const [0.1, 0.2, 0.9, 0.9, 0.95, 1],
+            stops: const [0.05, 0.3, 0.8, 0.9, 0.95, 1],
             colors: [
-              AppTheme.lightColorScheme.primary,
-              AppTheme.lightColorScheme.primary,
-              AppTheme.lightColorScheme.onTertiary,
-              AppTheme.lightColorScheme.onTertiary,
-              AppTheme.lightColorScheme.tertiaryContainer,
-              AppTheme.lightColorScheme.tertiaryContainer,
+              // AppTheme.lightColorScheme.primaryContainer,
+              // AppTheme.lightColorScheme.tertiaryContainer,
+              // AppTheme.lightColorScheme.tertiaryContainer,
+              // AppTheme.lightColorScheme.tertiaryContainer,
+              // AppTheme.lightColorScheme.onTertiary,
+              // AppTheme.lightColorScheme.onTertiary,
+              //
+              AppTheme.darkColorScheme.primaryContainer,
+              AppTheme.darkColorScheme.tertiaryContainer,
+              AppTheme.darkColorScheme.tertiaryContainer,
+              AppTheme.darkColorScheme.tertiaryContainer,
+              AppTheme.darkColorScheme.onTertiary,
+              AppTheme.darkColorScheme.onTertiary,
             ],
             begin: Alignment.bottomLeft,
             end: Alignment.topRight,
@@ -36,7 +43,9 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            title: const Text('Home'),
+            title: const Text(
+              'Home',
+            ),
             actions: const [
               ThemeButtonView(),
             ],

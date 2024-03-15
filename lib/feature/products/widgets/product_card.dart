@@ -16,15 +16,12 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primaryContainer,
+    return Card(
+      color: Theme.of(context).colorScheme.primaryContainer,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        backgroundBlendMode: BlendMode.darken,
-        boxShadow: [
-          Theme.of(context).appShadowTheme.primaryShadow,
-        ],
       ),
+      shadowColor: Theme.of(context).appShadowTheme.primaryShadow.color,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

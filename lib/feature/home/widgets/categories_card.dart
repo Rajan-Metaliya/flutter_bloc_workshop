@@ -15,7 +15,7 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).colorScheme.secondaryContainer,
+      color: Theme.of(context).colorScheme.primaryContainer,
       elevation: 4,
       shadowColor: Theme.of(context).appShadowTheme.primaryShadow.color,
       child: InkWell(

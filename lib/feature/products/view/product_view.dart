@@ -30,9 +30,9 @@ class ProductView extends StatelessWidget {
             ),
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 240,
-              childAspectRatio: 0.55,
-              crossAxisSpacing: 30,
-              mainAxisSpacing: 30,
+              childAspectRatio: 0.53,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
             ),
             itemBuilder: (context, index) {
               final product = state.products[index];
