@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/route/routes/route_path.dart';
-import '../../utils/theme/app_theme.dart';
+import '../../utils/theme/theme_extension/theme_extension.dart';
 import '../theme/view/theme_button_view.dart';
 import 'bloc/categories_bloc.dart';
 import 'view/categories_view.dart';
@@ -18,26 +18,7 @@ class HomeScreen extends StatelessWidget {
       create: (_) => CategoriesBloc()..add(const CategoriesFetchEvent()),
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            stops: const [0.05, 0.3, 0.8, 0.9, 0.95, 1],
-            colors: [
-              // AppTheme.lightColorScheme.primaryContainer,
-              // AppTheme.lightColorScheme.tertiaryContainer,
-              // AppTheme.lightColorScheme.tertiaryContainer,
-              // AppTheme.lightColorScheme.tertiaryContainer,
-              // AppTheme.lightColorScheme.onTertiary,
-              // AppTheme.lightColorScheme.onTertiary,
-              //
-              AppTheme.darkColorScheme.primaryContainer,
-              AppTheme.darkColorScheme.tertiaryContainer,
-              AppTheme.darkColorScheme.tertiaryContainer,
-              AppTheme.darkColorScheme.tertiaryContainer,
-              AppTheme.darkColorScheme.onTertiary,
-              AppTheme.darkColorScheme.onTertiary,
-            ],
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-          ),
+          gradient: Theme.of(context).appGradientTheme.backgroundGradient,
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,

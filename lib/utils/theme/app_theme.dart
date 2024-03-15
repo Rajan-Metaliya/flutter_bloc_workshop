@@ -10,6 +10,11 @@ class AppTheme {
         colorScheme: lightColorScheme,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
+          titleTextStyle: TextStyle(
+            color: Color(0xFF002022),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
           elevation: 0,
         ),
         extensions: [
@@ -22,6 +27,18 @@ class AppTheme {
         useMaterial3: true,
       ).copyWith(
         colorScheme: darkColorScheme,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          titleTextStyle: TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          iconTheme: IconThemeData(
+            color: Color.fromARGB(255, 255, 255, 255),
+          ),
+          elevation: 0,
+        ),
         extensions: [
           AppShadowTheme.dark(),
           AppGradientTheme.generate(colorScheme: darkColorScheme),
