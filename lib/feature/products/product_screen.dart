@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../utils/theme/theme_extension/theme_extension.dart';
 import 'bloc/product_bloc.dart';
 import 'view/product_view.dart';
 
@@ -22,7 +21,8 @@ class ProductScreen extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          gradient: Theme.of(context).appGradientTheme.backgroundGradient,
+          // gradient: Theme.of(context).appGradientTheme.backgroundGradient,
+          color: Theme.of(context).colorScheme.surface,
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,

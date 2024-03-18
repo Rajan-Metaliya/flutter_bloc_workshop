@@ -34,6 +34,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       routerConfig: router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

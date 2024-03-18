@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/route/routes/route_path.dart';
-import '../../utils/theme/theme_extension/theme_extension.dart';
 import '../theme/view/theme_button_view.dart';
 import 'bloc/categories_bloc.dart';
 import 'view/categories_view.dart';
@@ -18,7 +17,8 @@ class HomeScreen extends StatelessWidget {
       create: (_) => CategoriesBloc()..add(const CategoriesFetchEvent()),
       child: Container(
         decoration: BoxDecoration(
-          gradient: Theme.of(context).appGradientTheme.backgroundGradient,
+          // gradient: Theme.of(context).appGradientTheme.backgroundGradient,
+          color: Theme.of(context).colorScheme.surface,
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
