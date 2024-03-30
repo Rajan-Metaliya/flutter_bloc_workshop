@@ -35,6 +35,8 @@ class _MyAppState extends State<MyApp> {
       themeMode: ThemeMode.system,
       routerConfig: router,
       debugShowCheckedModeBanner: false,
+      themeAnimationCurve: Curves.easeInCirc,
+      themeAnimationDuration: const Duration(seconds: 1),
     );
   }
 }
